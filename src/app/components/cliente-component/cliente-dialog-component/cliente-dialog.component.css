@@ -1,0 +1,34 @@
+button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    color: white;
+  }
+
+  .button-danger{
+    color: red;
+  }
+
+  .button-success{
+    color: green;
+  }
+  
+  .btn-hover:hover{
+    color: blueviolet;
+  }
+  
+  .back-color{
+    background: #424242;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .ml-10{
+    margin-left: 10px;
+  }

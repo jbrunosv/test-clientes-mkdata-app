@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>{{ (cliente) ? "Editar Cliente" : "Cadastrar Cliente"}}</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill" class="ml-10" *ngIf="cliente.id != 0">
+    <mat-label>Id</mat-label>
+    <input matInput [(ngModel)]="cliente.id" disabled="true">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="cliente.nome">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10">
+    <mat-label>Tipo</mat-label>
+    <mat-select [(value)]="cliente.tipoCliente" >
+      <mat-option *ngFor="let tipo of TipoClienteEnum | keyvalue" [value]="tipo.key" >{{ tipo.value }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10" *ngIf="isPessoaFisica()">
+    <mat-label>CPF</mat-label>
+    <input matInput [(ngModel)]="cliente.cpf">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10" *ngIf="isPessoaJuridica()">
+    <mat-label>CNPJ</mat-label>
+    <input matInput [(ngModel)]="cliente.cnpj">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10" *ngIf="isPessoaFisica()">
+    <mat-label>RG</mat-label>
+    <input matInput [(ngModel)]="cliente.registroGeral">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10" *ngIf="isPessoaJuridica()">
+    <mat-label>Inscrição Estadual</mat-label>
+    <input matInput [(ngModel)]="cliente.inscricaoEstadual">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10">
+    <mat-label>Ativo?</mat-label>
+    <mat-select [(value)]="cliente.ativo" >
+      <mat-option [value]="true" >{{ true }}</mat-option>
+      <mat-option [value]="false" >{{ false }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10" *ngFor="let tel of cliente.telefones">
+    <mat-label>DDD</mat-label>
+    <input matInput [(ngModel)]="tel.ddd">
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="ml-10" *ngFor="let tel of cliente.telefones">
+    <mat-label>Telefone</mat-label>
+    <input matInput [(ngModel)]="tel.numeroTelefone">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="flex-container">
+  <button mat-button (click)="cancelar()" class="button-danger">    
+    <span class="material-symbols-outlined btn-hover">cancel</span>
+  </button>
+  <button mat-button (click)="atualizar(cliente)" cdkFocusInitial *ngIf="cliente.id != 0">
+    <span class="material-symbols-outlined btn-hover">upgrade</span>
+  </button>
+  <button mat-button (click)="salvar(cliente)" cdkFocusInitial *ngIf="cliente.id == 0">    
+    <span class="material-symbols-outlined btn-hover">save</span>
+  </button>
+</div>

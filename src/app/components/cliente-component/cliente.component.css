@@ -1,0 +1,60 @@
+table {
+  align-items: center;
+  justify-content: center;
+}
+
+.material-symbols-outlined {
+  margin-top: 3px;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+button{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  color: white;
+}
+
+.btn-hover:hover{
+  color: blueviolet;
+}
+
+.back-color{
+  background: #424242;
+}
+
+.filter-input{
+  width:430px
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+th, td{
+  text-align: center;
+}
+
+.ml-10{
+  margin-left: 10px;
+}
+
+.text-align-left{
+  text-align: left;
+}
+
+.text-align-center{
+  text-align: center;
+}
+
+.text-align-right{
+  text-align: right;
+}
