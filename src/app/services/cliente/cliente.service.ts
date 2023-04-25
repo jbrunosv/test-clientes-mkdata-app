@@ -9,7 +9,7 @@ import { Cliente } from 'src/app/components/model/Cliente';
 })
 export class ClienteService {
   
-  private enderecoApi: string = "https://teste-clientes-mkdata-app.herokuapp.com/testemkdata/api-v1/cliente";
+  private enderecoApi: string = "https://teste-clientes-mkdata.herokuapp.com/testemkdata/api-v1/cliente";
 
   constructor(private httpClient: HttpClient) {}
 
